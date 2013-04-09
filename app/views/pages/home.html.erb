@@ -1,15 +1,19 @@
-<div class="hero-unit">
-  <h1>Welcome to OM Rails</h1>
-  <p>Tagline</p>
-  <p>
-	You have found
-	<%= link_to "onemonthrails", "http://onemonthrails.com" %> Boo
-	</p>
+<% if user_signed_in? %>
+	<h1>You're Logged in!</h1>
+<% else %>
 
-	<p>
-	<%= link_to "Sign Up Now", "#", class: "btn btn-primary btn-large" %>
-	</p>
-</div>
+	<div class="hero-unit">
+	  <h1>Welcome to OM Rails</h1>
+	  <p>Tagline</p>
+	  <p>
+		You have found
+		<%= link_to "onemonthrails", "http://onemonthrails.com" %> Boo
+		</p>
+
+		<p>
+		<%= link_to "Sign Up Now", new_user_registration_path, class: "btn btn-primary btn-large" %>
+		</p>
+	</div>
 	
-
+<% end %>
 
